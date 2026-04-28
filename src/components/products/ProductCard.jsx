@@ -12,7 +12,7 @@ function ProductCard({ product, addToCart }) {
             <p className="text-sm text-amber-300">{product.category}</p>
             <h3 className="text-xl font-semibold text-white">{product.name}</h3>
           </div>
-          <p className="text-lg font-bold text-amber-200">฿{product.price}</p>
+          <p className="text-lg font-bold text-amber-200">THB{product.price}</p>
         </div>
 
         <button

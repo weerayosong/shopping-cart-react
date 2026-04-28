@@ -5,7 +5,7 @@ import ShoppingCartPage from "./pages/ShoppingCartPage";
 const products = [
   {
     id: 1,
-    name: "Classic White Tee",
+    name: "Shirt",
     price: 390,
     category: "Basics",
     image:
@@ -13,7 +13,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Leather Crossbody Bag",
+    name: "Leather Bag",
     price: 4200,
     category: "Accessories",
     image:
@@ -21,7 +21,7 @@ const products = [
   },
   {
     id: 3,
-    name: "White Running Sneakers",
+    name: "Sneakers",
     price: 3200,
     category: "Footwear",
     image:
@@ -29,7 +29,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Black Baseball Cap",
+    name: "Baseball Cap",
     price: 650,
     category: "Accessories",
     image:
