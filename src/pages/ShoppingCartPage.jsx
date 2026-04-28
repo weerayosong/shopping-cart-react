@@ -1,17 +1,25 @@
-import Cart from '../components/cart/Cart.jsx'
-import Header from '../components/layout/Header.jsx'
-import ProductList from '../components/products/ProductList.jsx'
+import Cart from "../components/cart/Cart";
+import ProductList from "../components/products/ProductList";
 
-function ShoppingCartPage() {
+function ShoppingCartPage({
+  products,
+  cartItems,
+  addToCart,
+  removeFromCart,
+  increaseQty,
+  decreaseQty,
+}) {
   return (
-    <main className="min-h-screen bg-slate-100 px-4 py-10 text-slate-900">
-      <div className="mx-auto max-w-6xl">
-        <Header />
-        <ProductList />
-        <Cart />
-      </div>
+    <main className="mx-auto grid min-h-[calc(100vh-97px)] max-w-7xl gap-8 px-6 py-8 lg:grid-cols-[1.35fr_0.9fr] lg:px-8">
+      <ProductList products={products} addToCart={addToCart} />
+      <Cart
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+        increaseQty={increaseQty}
+        decreaseQty={decreaseQty}
+      />
     </main>
-  )
+  );
 }
 
-export default ShoppingCartPage
+export default ShoppingCartPage;
