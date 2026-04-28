@@ -1,7 +1,7 @@
-import ShoppingCartPage from './pages/ShoppingCartPage.jsx'
+import ShoppingCartPage from "./pages/ShoppingCartPage.jsx";
 
 function App() {
-  return <ShoppingCartPage />
+  return <ShoppingCartPage />;
 }
 
-export default App
+export default App;
