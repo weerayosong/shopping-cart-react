@@ -1,10 +1,34 @@
-function CartItem() {
+function CartItem({ item, removeFromCart, increaseQty, decreaseQty }) {
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <h3 className="text-lg font-semibold text-slate-900">Cart Item</h3>
-      <p className="mt-2 text-sm text-slate-600">Product details will go here.</p>
-    </article>
-  )
+    <div>
+      <div>
+        <img src={item.image} alt={item.name} />
+        <div>
+          <div>
+            <div>
+              <h3>{item.name}</h3>
+              <p>{item.category}</p>
+            </div>
+            <button type="button" onClick={() => removeFromCart(item.id)}>
+              Remove
+            </button>
+          </div>
+          <div>
+            <div>
+              <button type="button" onClick={() => decreaseQty(item.id)}>
+                -
+              </button>
+              <span>{item.quantity}</span>
+              <button type="button" onClick={() => increaseQty(item.id)}>
+                +
+              </button>
+            </div>
+            <p>THB{item.price * item.quantity}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default CartItem
+export default CartItem;

@@ -1,15 +1,36 @@
-import CartItem from './CartItem.jsx'
-import CartSummary from './CartSummary.jsx'
+import CartItem from "./CartItem";
+import CartSummary from "./CartSummary";
 
-function Cart() {
+function Cart({ cartItems, removeFromCart, increaseQty, decreaseQty }) {
   return (
-    <section className="grid gap-4 lg:grid-cols-[1fr_320px]">
-      <div className="space-y-4">
-        <CartItem />
+    <aside>
+      <div>
+        <div>
+          <p>Your shopping Cart</p>
+          <h2>Order sammary</h2>
+        </div>
+        <div>{cartItems.length} items</div>
       </div>
-      <CartSummary />
-    </section>
-  )
+
+      {cartItems.length === 0 ? (
+        <div>Your cart is empty</div>
+      ) : (
+        <div>
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              removeFromCart={removeFromCart}
+              increaseQty={increaseQty}
+              decreaseQty={decreaseQty}
+            />
+          ))}
+        </div>
+      )}
+
+      <CartSummary cartItems={cartItems} />
+    </aside>
+  );
 }
 
-export default Cart
+export default Cart;

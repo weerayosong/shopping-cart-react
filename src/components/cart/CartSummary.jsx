@@ -1,10 +1,25 @@
-function CartSummary() {
+function CartSummary({ cartItems }) {
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
   return (
-    <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
-      <h3 className="text-lg font-semibold text-slate-900">Cart Summary</h3>
-      <p className="mt-2 text-sm text-slate-600">Order totals will go here.</p>
-    </aside>
-  )
+    <section>
+      <div>
+        <span>Total items</span>
+        <span>{totalItems}</span>
+      </div>
+      <div>
+        <span>Total price</span>
+        <span>THB{totalPrice}</span>
+      </div>
+      <button type="button">Checkout</button>
+    </section>
+  );
 }
 
-export default CartSummary
+export default CartSummary;
